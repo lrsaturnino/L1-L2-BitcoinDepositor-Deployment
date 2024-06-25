@@ -1,0 +1,10 @@
+node_modules/
+*.DS_Store
+
+dist/
+
+.vscode/
+.envrc
+.env
+
+yarn-error.log
