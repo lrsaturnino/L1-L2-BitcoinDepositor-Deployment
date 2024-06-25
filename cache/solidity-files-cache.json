@@ -177,48 +177,6 @@
         "BTCUtils"
       ]
     },
-    "C:\\Users\\nohac\\Documents\\dev\\deploy_tbtc_arbitrum\\node_modules\\@keep-network\\bitcoin-spv-sol\\contracts\\SafeMath.sol": {
-      "lastModificationDate": 1719282476497,
-      "contentHash": "6eaa85834281d21531b39a7f74a5c5e9",
-      "sourceName": "@keep-network/bitcoin-spv-sol/contracts/SafeMath.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.4"
-      ],
-      "artifacts": [
-        "SafeMath"
-      ]
-    },
     "C:\\Users\\nohac\\Documents\\dev\\deploy_tbtc_arbitrum\\node_modules\\@keep-network\\bitcoin-spv-sol\\contracts\\BytesLib.sol": {
       "lastModificationDate": 1719282476483,
       "contentHash": "c4cbe53256f97f1f5ebce796e2c4858b",
@@ -261,10 +219,52 @@
         "BytesLib"
       ]
     },
-    "C:\\Users\\nohac\\Documents\\dev\\deploy_tbtc_arbitrum\\contracts\\l2\\L1BitcoinDepositor.sol": {
-      "lastModificationDate": 1719284809645,
+    "C:\\Users\\nohac\\Documents\\dev\\deploy_tbtc_arbitrum\\node_modules\\@keep-network\\bitcoin-spv-sol\\contracts\\SafeMath.sol": {
+      "lastModificationDate": 1719282476497,
+      "contentHash": "6eaa85834281d21531b39a7f74a5c5e9",
+      "sourceName": "@keep-network/bitcoin-spv-sol/contracts/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "C:\\Users\\nohac\\Documents\\dev\\deploy_tbtc_arbitrum\\contracts\\l1\\L1BitcoinDepositor.sol": {
+      "lastModificationDate": 1719321679397,
       "contentHash": "8e50adfc5cdbe25a942fa0772250f8df",
-      "sourceName": "contracts/l2/L1BitcoinDepositor.sol",
+      "sourceName": "contracts/l1/L1BitcoinDepositor.sol",
       "solcConfig": {
         "version": "0.8.17",
         "settings": {
@@ -312,10 +312,10 @@
         "L1BitcoinDepositor"
       ]
     },
-    "C:\\Users\\nohac\\Documents\\dev\\deploy_tbtc_arbitrum\\contracts\\l2\\Wormhole.sol": {
-      "lastModificationDate": 1719211005420,
+    "C:\\Users\\nohac\\Documents\\dev\\deploy_tbtc_arbitrum\\contracts\\l1\\Wormhole.sol": {
+      "lastModificationDate": 1719321754582,
       "contentHash": "f896108586026fc7473cb7f51c4d26b2",
-      "sourceName": "contracts/l2/Wormhole.sol",
+      "sourceName": "contracts/l1/Wormhole.sol",
       "solcConfig": {
         "version": "0.8.17",
         "settings": {
@@ -448,6 +448,48 @@
         "Reimbursable"
       ]
     },
+    "C:\\Users\\nohac\\Documents\\dev\\deploy_tbtc_arbitrum\\node_modules\\@openzeppelin\\contracts-upgradeable\\token\\ERC20\\IERC20Upgradeable.sol": {
+      "lastModificationDate": 1719282477390,
+      "contentHash": "9a9398a7dbda9d014f04d5eb0fb581fd",
+      "sourceName": "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Upgradeable"
+      ]
+    },
     "C:\\Users\\nohac\\Documents\\dev\\deploy_tbtc_arbitrum\\node_modules\\@openzeppelin\\contracts-upgradeable\\token\\ERC20\\utils\\SafeERC20Upgradeable.sol": {
       "lastModificationDate": 1719282477513,
       "contentHash": "f6d59fee2d6fafaea5a33717dfba1260",
@@ -492,48 +534,6 @@
       ],
       "artifacts": [
         "SafeERC20Upgradeable"
-      ]
-    },
-    "C:\\Users\\nohac\\Documents\\dev\\deploy_tbtc_arbitrum\\node_modules\\@openzeppelin\\contracts-upgradeable\\token\\ERC20\\IERC20Upgradeable.sol": {
-      "lastModificationDate": 1719282477390,
-      "contentHash": "9a9398a7dbda9d014f04d5eb0fb581fd",
-      "sourceName": "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC20Upgradeable"
       ]
     },
     "C:\\Users\\nohac\\Documents\\dev\\deploy_tbtc_arbitrum\\node_modules\\@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol": {
@@ -928,10 +928,10 @@
         "L2BitcoinDepositor"
       ]
     },
-    "C:\\Users\\nohac\\Documents\\dev\\deploy_tbtc_arbitrum\\contracts\\flattened\\L1BitcoinDepositor_flattened.sol": {
-      "lastModificationDate": 1719287946794,
-      "contentHash": "d41d8cd98f00b204e9800998ecf8427e",
-      "sourceName": "contracts/flattened/L1BitcoinDepositor_flattened.sol",
+    "C:\\Users\\nohac\\Documents\\dev\\deploy_tbtc_arbitrum\\contracts\\l2\\Wormhole.sol": {
+      "lastModificationDate": 1719211005420,
+      "contentHash": "f896108586026fc7473cb7f51c4d26b2",
+      "sourceName": "contracts/l2/Wormhole.sol",
       "solcConfig": {
         "version": "0.8.17",
         "settings": {
@@ -963,8 +963,17 @@
         }
       },
       "imports": [],
-      "versionPragmas": [],
-      "artifacts": []
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "IWormhole",
+        "IWormholeReceiver",
+        "IWormholeRelayer",
+        "IWormholeTokenBridge",
+        "WormholeTypes",
+        "WormholeUtils"
+      ]
     }
   }
 }

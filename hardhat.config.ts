@@ -18,13 +18,18 @@ const config: HardhatUserConfig = {
     ],
   },
   networks: {
-    sepolia: {
-      url: process.env.SEPOLIA_URL || "",
+    ethereumSepolia: {
+      url: process.env.MAINNET_SEPOLIA_URL || "",
+      accounts: process.env.SEPOLIA_PRIVATE_KEY !== undefined ? [process.env.SEPOLIA_PRIVATE_KEY] : [],
+    },
+    arbitrumSepolia: {
+      url: process.env.ARBITRUM_SEPOLIA_URL || "",
       accounts: process.env.SEPOLIA_PRIVATE_KEY !== undefined ? [process.env.SEPOLIA_PRIVATE_KEY] : [],
     },
   },
   etherscan: {
     apiKey: {
+      sepolia: process.env.ETHERSCAN_API_KEY,
       arbitrumSepolia: process.env.ARBISCAN_API_KEY,
     }
   },

@@ -14,12 +14,12 @@ export type { AbstractTBTCDepositor } from "./AbstractTBTCDepositor";
 export type { IBridge } from "./IBridge";
 export type { ITBTCVault } from "./ITBTCVault";
 export type { L1BitcoinDepositor } from "./L1BitcoinDepositor";
-export type { IL2WormholeGateway } from "./IL2WormholeGateway";
-export type { L2BitcoinDepositor } from "./L2BitcoinDepositor";
 export type { IWormhole } from "./IWormhole";
 export type { IWormholeReceiver } from "./IWormholeReceiver";
 export type { IWormholeRelayer } from "./IWormholeRelayer";
 export type { IWormholeTokenBridge } from "./IWormholeTokenBridge";
+export type { IL2WormholeGateway } from "./IL2WormholeGateway";
+export type { L2BitcoinDepositor } from "./L2BitcoinDepositor";
 
 export { BTCUtils__factory } from "./factories/BTCUtils__factory";
 export { Reimbursable__factory } from "./factories/Reimbursable__factory";
@@ -34,9 +34,9 @@ export { AbstractTBTCDepositor__factory } from "./factories/AbstractTBTCDeposito
 export { IBridge__factory } from "./factories/IBridge__factory";
 export { ITBTCVault__factory } from "./factories/ITBTCVault__factory";
 export { L1BitcoinDepositor__factory } from "./factories/L1BitcoinDepositor__factory";
-export { IL2WormholeGateway__factory } from "./factories/IL2WormholeGateway__factory";
-export { L2BitcoinDepositor__factory } from "./factories/L2BitcoinDepositor__factory";
 export { IWormhole__factory } from "./factories/IWormhole__factory";
 export { IWormholeReceiver__factory } from "./factories/IWormholeReceiver__factory";
 export { IWormholeRelayer__factory } from "./factories/IWormholeRelayer__factory";
 export { IWormholeTokenBridge__factory } from "./factories/IWormholeTokenBridge__factory";
+export { IL2WormholeGateway__factory } from "./factories/IL2WormholeGateway__factory";
+export { L2BitcoinDepositor__factory } from "./factories/L2BitcoinDepositor__factory";
