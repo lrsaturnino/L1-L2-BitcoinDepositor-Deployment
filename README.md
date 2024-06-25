@@ -1,8 +1,4 @@
-:toc: macro
-
 This package contains L1BitcoinDepositor and L2BitcoinDepositor contracts.
-
-toc::[]
 
 == Build, test and deploy
 
