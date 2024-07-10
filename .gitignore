@@ -131,8 +131,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-artifacts/
 typechain-types/
 cache/
 .openzeppelin
-deployments/
