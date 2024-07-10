@@ -1,8 +1,8 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
 
-const deployL2BitcoinDepositors: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
-  const { ethers, getNamedAccounts, helpers} = hre
+const deployL2BitcoinDepositor: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+  const { ethers, getNamedAccounts, helpers, deployments} = hre
   const { deployer } = await getNamedAccounts()
 
   try {
@@ -14,7 +14,7 @@ const deployL2BitcoinDepositors: DeployFunction = async function (hre: HardhatRu
       "ArbitrumL2BitcoinDepositor",
       {
         contractName:
-          "@keep-network/tbtc-v2/contracts/l2/L2BitcoinDepositor.sol:L2BitcoinDepositor",
+          "L2BitcoinDepositor",
         initializerArgs: [
           wormholeRelayerAddress,
           l2WormholeGatewayAddress,
@@ -29,7 +29,7 @@ const deployL2BitcoinDepositors: DeployFunction = async function (hre: HardhatRu
 
     // Contracts can be verified on L2 Base Etherscan in a similar way as we
     // do it on L1 Etherscan
-    if (hre.network.tags.basescan) {
+    if (hre.network.tags.etherscan) {
       // We use `verify` instead of `verify:verify` as the `verify` task is defined
       // in "@openzeppelin/hardhat-upgrades" to verify the proxy’s implementation
       // contract, the proxy itself and any proxy-related contracts, as well as
@@ -39,7 +39,6 @@ const deployL2BitcoinDepositors: DeployFunction = async function (hre: HardhatRu
         constructorArgsParams: [],
       })
     }      
-
     console.log("L2BitcoinDepositor deployed to Arbitrum Sepolia at:", proxyDeployment.address);
     
   } catch (error) {
@@ -47,7 +46,5 @@ const deployL2BitcoinDepositors: DeployFunction = async function (hre: HardhatRu
   }
 };
 
-export default deployL2BitcoinDepositors;
-deployL2BitcoinDepositors.tags = ["L2BitcoinDepositor"]
-deployL2BitcoinDepositors.dependencies = ["BaseWormholeGateway"]
-
+export default deployL2BitcoinDepositor;
+deployL2BitcoinDepositor.tags = ["L2BitcoinDepositor"];

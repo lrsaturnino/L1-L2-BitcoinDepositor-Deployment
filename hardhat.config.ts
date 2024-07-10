@@ -26,46 +26,42 @@ const config: HardhatUserConfig = {
       }
     ],
   },
-
-  paths: {
-    artifacts: "./build",
-  },
-
   networks: {
     sepolia: {
       url: process.env.MAINNET_SEPOLIA_URL || "",
       chainId: 11155111,
-      accounts: process.env.SEPOLIA_PRIVATE_KEY !== undefined ? [process.env.SEPOLIA_PRIVATE_KEY] : [],
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      tags: ["etherscan"],
     },
     arbitrumSepolia: {
       url: process.env.ARBITRUM_SEPOLIA_URL || "",
       chainId: 421614,
-      accounts: process.env.SEPOLIA_PRIVATE_KEY !== undefined ? [process.env.SEPOLIA_PRIVATE_KEY] : [],
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      tags: ["etherscan"],
     },
   },
-
-  external: {
-    deployments: {
-      sepolia: ["./external/sepolia"],
-      arbitrumSepolia: ["./external/arbitrumSepolia"],
-    },
-  },
-
-  deploymentArtifactsExport: {
-    sepolia: "artifacts/l1",
-    arbitrumSepolia: "artifacts/l2",
-  },
-
   etherscan: {
     apiKey: {
-      sepolia: process.env.ETHERSCAN_API_KEY,
-      arbitrumSepolia: process.env.ARBISCAN_API_KEY,
-    }
+      sepolia: process.env.ETHERSCAN_API_KEY || "",
+      "arbitrum-sepolia": process.env.ARBISCAN_API_KEY || "",
+    },
+    customChains: [
+      {
+        network: "arbitrum-sepolia",
+        chainId: 421614,
+        urls: {
+          apiURL: "https://api-sepolia.arbiscan.io/api",
+          browserURL: "https://sepolia.arbiscan.io",
+        },
+      },
+    ],    
   },
 
-  gasReporter: {
-    enabled: process.env.REPORT_GAS !== undefined,
-    currency: "USD",
+  namedAccounts: {
+    deployer: {
+      sepolia: "0x992500f42A48371c2c9f91EE6165ba8F9dfB1692",
+      arbitrumSepolia: "0x992500f42A48371c2c9f91EE6165ba8F9dfB1692",
+    },
   },
 };
 

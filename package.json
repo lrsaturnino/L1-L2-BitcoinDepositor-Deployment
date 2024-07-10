@@ -5,11 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "hardhat compile",
-    "deploy:ethereumSepolia": "hardhat deploy --tags L1BitcoinDepositor --network ethereumSepolia",
-    "deploy:arbitrumSepolia": "hardhat deploy --tags L2BitcoinDepositor",
-    "attach:l2BitcoinDepositor": "hardhat run scripts/01_attach_l2_bitcoin_depositor.ts --network arbitrumSepolia",
-    "attach:l1BitcoinDepositor": "hardhat run scripts/02_attach_l1_bitcoin_depositor.ts --network ethereumSepolia",
-    "verify:ethereumSepolia": "hardhat verify --network ethereumSepolia",
+    "deploy:sepolia": "hardhat deploy --network sepolia --tags L1BitcoinDepositor",
+    "deploy:arbitrumSepolia": "hardhat deploy --network arbitrumSepolia --tags L2BitcoinDepositor",
+    "verify:sepolia": "hardhat verify --network sepolia",
     "verify:arbitrumSepolia": "hardhat verify --network arbitrumSepolia"
   },
   "license": "GPL-3.0-only",

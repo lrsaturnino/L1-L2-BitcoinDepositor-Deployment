@@ -49,21 +49,13 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Ownable__factory>;
     getContractFactory(
-      name: "AbstractTBTCDepositor",
+      name: "IL2WormholeGateway",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.AbstractTBTCDepositor__factory>;
+    ): Promise<Contracts.IL2WormholeGateway__factory>;
     getContractFactory(
-      name: "IBridge",
+      name: "L2BitcoinDepositor",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IBridge__factory>;
-    getContractFactory(
-      name: "ITBTCVault",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ITBTCVault__factory>;
-    getContractFactory(
-      name: "L1BitcoinDepositor",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.L1BitcoinDepositor__factory>;
+    ): Promise<Contracts.L2BitcoinDepositor__factory>;
     getContractFactory(
       name: "IWormhole",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -81,13 +73,21 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IWormholeTokenBridge__factory>;
     getContractFactory(
-      name: "IL2WormholeGateway",
+      name: "AbstractTBTCDepositor",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IL2WormholeGateway__factory>;
+    ): Promise<Contracts.AbstractTBTCDepositor__factory>;
     getContractFactory(
-      name: "L2BitcoinDepositor",
+      name: "IBridge",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.L2BitcoinDepositor__factory>;
+    ): Promise<Contracts.IBridge__factory>;
+    getContractFactory(
+      name: "ITBTCVault",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ITBTCVault__factory>;
+    getContractFactory(
+      name: "L1BitcoinDepositor",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.L1BitcoinDepositor__factory>;
     getContractFactory(
       name: "IWormhole",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -151,25 +151,15 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.Ownable>;
     getContractAt(
-      name: "AbstractTBTCDepositor",
+      name: "IL2WormholeGateway",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.AbstractTBTCDepositor>;
+    ): Promise<Contracts.IL2WormholeGateway>;
     getContractAt(
-      name: "IBridge",
+      name: "L2BitcoinDepositor",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.IBridge>;
-    getContractAt(
-      name: "ITBTCVault",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ITBTCVault>;
-    getContractAt(
-      name: "L1BitcoinDepositor",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.L1BitcoinDepositor>;
+    ): Promise<Contracts.L2BitcoinDepositor>;
     getContractAt(
       name: "IWormhole",
       address: string,
@@ -191,15 +181,25 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.IWormholeTokenBridge>;
     getContractAt(
-      name: "IL2WormholeGateway",
+      name: "AbstractTBTCDepositor",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.IL2WormholeGateway>;
+    ): Promise<Contracts.AbstractTBTCDepositor>;
     getContractAt(
-      name: "L2BitcoinDepositor",
+      name: "IBridge",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.L2BitcoinDepositor>;
+    ): Promise<Contracts.IBridge>;
+    getContractAt(
+      name: "ITBTCVault",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ITBTCVault>;
+    getContractAt(
+      name: "L1BitcoinDepositor",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.L1BitcoinDepositor>;
     getContractAt(
       name: "IWormhole",
       address: string,
