@@ -6,7 +6,7 @@ const deployL2BitcoinDepositor: DeployFunction = async function (hre: HardhatRun
   const { deployer } = await getNamedAccounts()
 
   try {
-    const wormholeRelayerAddress = "0x27428DD2d3DD32A4D7f7C497eAaa23130d894911"; verificar??
+    const wormholeRelayerAddress = "0x27428DD2d3DD32A4D7f7C497eAaa23130d894911";
     const l2WormholeGatewayAddress = "0x1293a54e160D1cd7075487898d65266081A15458";
     const l1ChainId = 2;
 

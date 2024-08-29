@@ -8,9 +8,9 @@ const deployL1BitcoinDepositor: DeployFunction = async function (hre: HardhatRun
   try {
     const tbtcBridgeAddress = "0x5e4861a80B55f035D899f66772117F00FA0E8e7B";
     const tbtcVaultAddress = "0x9C070027cdC9dc8F82416B2e5314E11DFb4FE3CD";
-    const wormholeAddress = "0x98f3c9e6E3fAce36bAAd05FE09d375Ef1464288B"; verificar??
-    const wormholeRelayerAddress = "0x27428DD2d3DD32A4D7f7C497eAaa23130d894911"; verificar??
-    const wormholeTokenBridgeAddress = "0x3ee18b2214aff97000d974cf647e7c347e8fa585"; verificar!!!!
+    const wormholeAddress = "0x98f3c9e6E3fAce36bAAd05FE09d375Ef1464288B";
+    const wormholeRelayerAddress = "0x27428DD2d3DD32A4D7f7C497eAaa23130d894911";
+    const wormholeTokenBridgeAddress = "0x3ee18b2214aff97000d974cf647e7c347e8fa585";
     const l2WormholeGatewayAddress = "0x1293a54e160D1cd7075487898d65266081A15458";
     const l2ChainId = 23;
 
