@@ -11,16 +11,17 @@ const deployL2BitcoinDepositor: DeployFunction = async function (hre: HardhatRun
     const l1ChainId = 2;
 
     const [, proxyDeployment] = await helpers.upgrades.deployProxy(
-      "ArbitrumOneL2BitcoinDepositor",
+      "ArbitrumL2BitcoinDepositor",
       {
-        contractName:
-          "L2BitcoinDepositor",
+        contractName: "L2BitcoinDepositor",
         initializerArgs: [
           wormholeRelayerAddress,
           l2WormholeGatewayAddress,
           l1ChainId,
         ],
-        factoryOpts: { signer: await ethers.getSigner(deployer) },
+        factoryOpts: { 
+          signer: await ethers.getSigner(deployer),
+        },
         proxyOpts: {
           kind: "transparent",
         },

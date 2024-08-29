@@ -30,13 +30,13 @@ const config: HardhatUserConfig = {
     mainnet: {
       url: process.env.MAINNET_RPC_URL || "",
       chainId: 1,
-      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      accounts: process.env.PRIVATE_KEY_MAINNET !== undefined ? [process.env.PRIVATE_KEY_MAINNET] : [],
       tags: ["etherscan"],
     },
     arbitrumOne: {
       url: process.env.ARBITRUM_RPC_URL || "",
       chainId: 42161,
-      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      accounts: process.env.PRIVATE_KEY_ARBITRUM !== undefined ? [process.env.PRIVATE_KEY_ARBITRUM] : [],
       tags: ["etherscan"],
     },
   },
@@ -59,8 +59,8 @@ const config: HardhatUserConfig = {
 
   namedAccounts: {
     deployer: {
-      sepolia: "0x949f0ADFDA95351829E49aEec0f99371A227572d",
-      arbitrumSepolia: "0x949f0ADFDA95351829E49aEec0f99371A227572d",
+      mainnet: "0x949f0ADFDA95351829E49aEec0f99371A227572d",
+      arbitrumOne: "0xBC9C7345d240764BAF2D2016a86165BDf06131c2",
     },
   },
 };
