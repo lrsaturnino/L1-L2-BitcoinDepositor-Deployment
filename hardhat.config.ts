@@ -27,31 +27,31 @@ const config: HardhatUserConfig = {
     ],
   },
   networks: {
-    sepolia: {
-      url: process.env.MAINNET_SEPOLIA_URL || "",
-      chainId: 11155111,
+    mainnet: {
+      url: process.env.MAINNET_RPC_URL || "",
+      chainId: 1,
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
       tags: ["etherscan"],
     },
-    arbitrumSepolia: {
-      url: process.env.ARBITRUM_SEPOLIA_URL || "",
-      chainId: 421614,
+    arbitrumOne: {
+      url: process.env.ARBITRUM_RPC_URL || "",
+      chainId: 42161,
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
       tags: ["etherscan"],
     },
   },
   etherscan: {
     apiKey: {
-      sepolia: process.env.ETHERSCAN_API_KEY || "",
-      "arbitrum-sepolia": process.env.ARBISCAN_API_KEY || "",
+      mainnet: process.env.ETHERSCAN_API_KEY || "",
+      "arbitrumOne": process.env.ARBISCAN_API_KEY || "",
     },
     customChains: [
       {
-        network: "arbitrum-sepolia",
-        chainId: 421614,
+        network: "arbitrumOne",
+        chainId: 42161,
         urls: {
-          apiURL: "https://api-sepolia.arbiscan.io/api",
-          browserURL: "https://sepolia.arbiscan.io",
+          apiURL: "https://api.arbiscan.io/api",
+          browserURL: "https://arbiscan.io/",
         },
       },
     ],    
@@ -59,8 +59,8 @@ const config: HardhatUserConfig = {
 
   namedAccounts: {
     deployer: {
-      sepolia: "0x992500f42A48371c2c9f91EE6165ba8F9dfB1692",
-      arbitrumSepolia: "0x992500f42A48371c2c9f91EE6165ba8F9dfB1692",
+      sepolia: "0x949f0ADFDA95351829E49aEec0f99371A227572d",
+      arbitrumSepolia: "0x949f0ADFDA95351829E49aEec0f99371A227572d",
     },
   },
 };
