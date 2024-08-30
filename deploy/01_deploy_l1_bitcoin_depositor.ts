@@ -6,16 +6,16 @@ const deployL1BitcoinDepositor: DeployFunction = async function (hre: HardhatRun
   const { deployer } = await getNamedAccounts()
 
   try {
-    const tbtcBridgeAddress = "0x9b1a7fE5a16A15F2f9475C5B231750598b113403";
-    const tbtcVaultAddress = "0xB5679dE944A79732A75CE556191DF11F489448d5";
-    const wormholeAddress = "0x4a8bc80Ed5a4067f1CCf107057b8270E0cC11A78";
-    const wormholeRelayerAddress = "0x7B1bD7a6b4E61c2a123AC6BC2cbfC614437D0470";
-    const wormholeTokenBridgeAddress = "0xDB5492265f6038831E89f495670FF909aDe94bd9";
-    const l2WormholeGatewayAddress = "0xc3D46e0266d95215589DE639cC4E93b79f88fc6C";
-    const l2ChainId = 10003;
+    const tbtcBridgeAddress = "0x5e4861a80B55f035D899f66772117F00FA0E8e7B";
+    const tbtcVaultAddress = "0x9C070027cdC9dc8F82416B2e5314E11DFb4FE3CD";
+    const wormholeAddress = "0x98f3c9e6E3fAce36bAAd05FE09d375Ef1464288B";
+    const wormholeRelayerAddress = "0x27428DD2d3DD32A4D7f7C497eAaa23130d894911";
+    const wormholeTokenBridgeAddress = "0x3ee18b2214aff97000d974cf647e7c347e8fa585";
+    const l2WormholeGatewayAddress = "0x1293a54e160D1cd7075487898d65266081A15458";
+    const l2ChainId = 23;
 
     const [, proxyDeployment] = await helpers.upgrades.deployProxy(
-      "SepoliaL1BitcoinDepositor",
+      "ArbitrumOneL1BitcoinDepositor",
       {
         contractName:
           "L1BitcoinDepositor",
@@ -47,7 +47,7 @@ const deployL1BitcoinDepositor: DeployFunction = async function (hre: HardhatRun
         constructorArgsParams: [],
       })
     }      
-    console.log("L1BitcoinDepositor deployed to Mainnet Sepolia at:", proxyDeployment.address);
+    console.log("L1BitcoinDepositor deployed to Mainnet at:", proxyDeployment.address);
     
   } catch (error) {
     console.error("An error occurred during deployment:", error);

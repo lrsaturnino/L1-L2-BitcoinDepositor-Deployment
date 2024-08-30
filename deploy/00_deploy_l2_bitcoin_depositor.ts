@@ -6,21 +6,22 @@ const deployL2BitcoinDepositor: DeployFunction = async function (hre: HardhatRun
   const { deployer } = await getNamedAccounts()
 
   try {
-    const wormholeRelayerAddress = "0x7B1bD7a6b4E61c2a123AC6BC2cbfC614437D0470";
-    const l2WormholeGatewayAddress = "0xc3D46e0266d95215589DE639cC4E93b79f88fc6C";
-    const l1ChainId = 10002;
+    const wormholeRelayerAddress = "0x27428DD2d3DD32A4D7f7C497eAaa23130d894911";
+    const l2WormholeGatewayAddress = "0x1293a54e160D1cd7075487898d65266081A15458";
+    const l1ChainId = 2;
 
     const [, proxyDeployment] = await helpers.upgrades.deployProxy(
       "ArbitrumL2BitcoinDepositor",
       {
-        contractName:
-          "L2BitcoinDepositor",
+        contractName: "L2BitcoinDepositor",
         initializerArgs: [
           wormholeRelayerAddress,
           l2WormholeGatewayAddress,
           l1ChainId,
         ],
-        factoryOpts: { signer: await ethers.getSigner(deployer) },
+        factoryOpts: { 
+          signer: await ethers.getSigner(deployer),
+        },
         proxyOpts: {
           kind: "transparent",
         },
@@ -39,7 +40,7 @@ const deployL2BitcoinDepositor: DeployFunction = async function (hre: HardhatRun
         constructorArgsParams: [],
       })
     }      
-    console.log("L2BitcoinDepositor deployed to Arbitrum Sepolia at:", proxyDeployment.address);
+    console.log("L2BitcoinDepositor deployed to ArbitrumOne at:", proxyDeployment.address);
     
   } catch (error) {
     console.error("An error occurred during deployment:", error);
