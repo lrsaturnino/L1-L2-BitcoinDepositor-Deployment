@@ -69,7 +69,6 @@ import "./Wormhole.sol";
 ///            Token Bridge and uses it to mint canonical L2 TBTC to the L2 user
 ///            address.
 contract L1BitcoinDepositor is
-    Initializable,
     AbstractTBTCDepositor,
     OwnableUpgradeable,
     Reimbursable
@@ -461,6 +460,17 @@ contract L1BitcoinDepositor is
             // address in Wormhole format.
             bytes32 l2DepositOwner
         ) = _finalizeDeposit(depositKey);
+
+
+        // The deposit transaction max fee is in the 1e8 satoshi precision.
+        // We need to convert them to the 1e18 TBTC precision.
+        (, , uint64 depositTxMaxFee, ) = bridge.depositParameters();
+        uint256 txMaxFee = depositTxMaxFee * SATOSHI_MULTIPLIER;
+
+        // The Threshold DAO decided the deposit transaction max fee to be 0.
+        // Instead of changing the deposit parameters, we add the fee to the
+        // amount of TBTC that is transferred to the L2 deposit owner.
+        tbtcAmount += txMaxFee;
 
         // slither-disable-next-line reentrancy-events
         emit DepositFinalized(
