@@ -2,22 +2,22 @@ import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
 
 const deployL2BitcoinDepositor: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
-  const { ethers, getNamedAccounts, helpers, deployments} = hre
+  const { ethers, getNamedAccounts, helpers } = hre
   const { deployer } = await getNamedAccounts()
 
   try {
     const wormholeRelayerAddress = "0x27428DD2d3DD32A4D7f7C497eAaa23130d894911";
     const l2WormholeGatewayAddress = "0x1293a54e160D1cd7075487898d65266081A15458";
-    const l1ChainId = 2;
+    const wormholeL1ChainId = 10002;
 
     const [, proxyDeployment] = await helpers.upgrades.deployProxy(
-      "ArbitrumL2BitcoinDepositor",
+      "BaseL2BitcoinDepositor",
       {
         contractName: "L2BitcoinDepositor",
         initializerArgs: [
           wormholeRelayerAddress,
           l2WormholeGatewayAddress,
-          l1ChainId,
+          wormholeL1ChainId,
         ],
         factoryOpts: { 
           signer: await ethers.getSigner(deployer),
@@ -40,7 +40,7 @@ const deployL2BitcoinDepositor: DeployFunction = async function (hre: HardhatRun
         constructorArgsParams: [],
       })
     }      
-    console.log("L2BitcoinDepositor deployed to ArbitrumOne at:", proxyDeployment.address);
+    console.log("L2BitcoinDepositor deployed to Base Sepolia at:", proxyDeployment.address);
     
   } catch (error) {
     console.error("An error occurred during deployment:", error);

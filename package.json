@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "hardhat compile",
-    "deploy:mainnet": "hardhat deploy --network mainnet --tags L1BitcoinDepositor",
-    "deploy:arbitrumOne": "hardhat deploy --network arbitrumOne --tags L2BitcoinDepositor",
-    "verify:mainnet": "hardhat verify --network sepolia",
-    "verify:arbitrumOne": "hardhat verify --network arbitrumSepolia"
+    "deploy:l1": "hardhat deploy --network sepolia --tags L1BitcoinDepositor",
+    "deploy:l2": "hardhat deploy --network baseSepolia --tags L2BitcoinDepositor",
+    "verify:l1": "hardhat verify --network sepolia",
+    "verify:l2": "hardhat verify --network baseSepolia"
   },
   "license": "GPL-3.0-only",
   "dependencies": {
