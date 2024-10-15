@@ -27,31 +27,31 @@ const config: HardhatUserConfig = {
     ],
   },
   networks: {
-    mainnet: {
-      url: process.env.MAINNET_RPC_URL || "",
-      chainId: 1,
-      accounts: process.env.PRIVATE_KEY_MAINNET !== undefined ? [process.env.PRIVATE_KEY_MAINNET] : [],
+    sepolia: {
+      url: process.env.ETHEREUM_SEPOLIA_RPC_URL || "",
+      chainId: 11155111,
+      accounts: process.env.PRIVATE_KEY_L1Deployer !== undefined ? [process.env.PRIVATE_KEY_L1Deployer] : [],
       tags: ["etherscan"],
     },
-    arbitrumOne: {
-      url: process.env.ARBITRUM_RPC_URL || "",
-      chainId: 42161,
-      accounts: process.env.PRIVATE_KEY_ARBITRUM !== undefined ? [process.env.PRIVATE_KEY_ARBITRUM] : [],
+    baseSepolia: {
+      url: process.env.L2_TESTNET_RPC_URL || "",
+      chainId: 84532,
+      accounts: process.env.PRIVATE_KEY_L2Deployer !== undefined ? [process.env.PRIVATE_KEY_L2Deployer] : [],
       tags: ["etherscan"],
     },
   },
   etherscan: {
     apiKey: {
-      mainnet: process.env.ETHERSCAN_API_KEY || "",
-      "arbitrumOne": process.env.ARBISCAN_API_KEY || "",
+      sepolia: process.env.ETHEREUM_SEPOLIA_EXPLORER_API_KEY || "",
+      "baseSepolia": process.env.L2_TESTNET_EXPLORER_API_KEY || "",
     },
     customChains: [
       {
-        network: "arbitrumOne",
-        chainId: 42161,
+        network: "baseSepolia",
+        chainId: 84532,
         urls: {
-          apiURL: "https://api.arbiscan.io/api",
-          browserURL: "https://arbiscan.io/",
+          apiURL: "https://api-sepolia.basescan.org",
+          browserURL: "https://sepolia.basescan.org",
         },
       },
     ],    
