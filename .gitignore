@@ -133,4 +133,8 @@ dist
 
 typechain-types/
 cache/
-.openzeppelin
+.openzeppelin/
+/typechain-types
+/cache
+/artifacts
+.DS_Store
