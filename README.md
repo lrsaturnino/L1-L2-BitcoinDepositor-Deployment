@@ -9,8 +9,8 @@ below.
 
 Please make sure you have the following prerequisites installed on your machine:
 
-- https://nodejs.org[Node.js] >14.17.4
-- https://yarnpkg.com[Yarn] >1.22.10
+- https://nodejs.org[Node.js] >=14.17.4
+- https://yarnpkg.com[Yarn] >=1.22.10
 
 === Build contracts
 
