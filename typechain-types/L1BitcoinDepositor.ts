@@ -75,9 +75,11 @@ export interface L1BitcoinDepositorInterface extends utils.Interface {
     "l2WormholeGateway()": FunctionFragment;
     "owner()": FunctionFragment;
     "quoteFinalizeDeposit()": FunctionFragment;
+    "reimburseTxMaxFee()": FunctionFragment;
     "reimbursementAuthorizations(address)": FunctionFragment;
     "reimbursementPool()": FunctionFragment;
     "renounceOwnership()": FunctionFragment;
+    "setReimburseTxMaxFee(bool)": FunctionFragment;
     "tbtcToken()": FunctionFragment;
     "tbtcVault()": FunctionFragment;
     "transferOwnership(address)": FunctionFragment;
@@ -146,6 +148,10 @@ export interface L1BitcoinDepositorInterface extends utils.Interface {
     values?: undefined
   ): string;
   encodeFunctionData(
+    functionFragment: "reimburseTxMaxFee",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
     functionFragment: "reimbursementAuthorizations",
     values: [string]
   ): string;
@@ -156,6 +162,10 @@ export interface L1BitcoinDepositorInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: "renounceOwnership",
     values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setReimburseTxMaxFee",
+    values: [boolean]
   ): string;
   encodeFunctionData(functionFragment: "tbtcToken", values?: undefined): string;
   encodeFunctionData(functionFragment: "tbtcVault", values?: undefined): string;
@@ -239,6 +249,10 @@ export interface L1BitcoinDepositorInterface extends utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
+    functionFragment: "reimburseTxMaxFee",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "reimbursementAuthorizations",
     data: BytesLike
   ): Result;
@@ -248,6 +262,10 @@ export interface L1BitcoinDepositorInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "renounceOwnership",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "setReimburseTxMaxFee",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "tbtcToken", data: BytesLike): Result;
@@ -289,6 +307,7 @@ export interface L1BitcoinDepositorInterface extends utils.Interface {
     "Initialized(uint8)": EventFragment;
     "L2FinalizeDepositGasLimitUpdated(uint256)": EventFragment;
     "OwnershipTransferred(address,address)": EventFragment;
+    "ReimburseTxMaxFeeUpdated(bool)": EventFragment;
     "ReimbursementAuthorizationUpdated(address,bool)": EventFragment;
     "ReimbursementPoolUpdated(address)": EventFragment;
   };
@@ -301,6 +320,7 @@ export interface L1BitcoinDepositorInterface extends utils.Interface {
     nameOrSignatureOrTopic: "L2FinalizeDepositGasLimitUpdated"
   ): EventFragment;
   getEvent(nameOrSignatureOrTopic: "OwnershipTransferred"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "ReimburseTxMaxFeeUpdated"): EventFragment;
   getEvent(
     nameOrSignatureOrTopic: "ReimbursementAuthorizationUpdated"
   ): EventFragment;
@@ -356,6 +376,14 @@ export type OwnershipTransferredEvent = TypedEvent<
 
 export type OwnershipTransferredEventFilter =
   TypedEventFilter<OwnershipTransferredEvent>;
+
+export type ReimburseTxMaxFeeUpdatedEvent = TypedEvent<
+  [boolean],
+  { reimburseTxMaxFee: boolean }
+>;
+
+export type ReimburseTxMaxFeeUpdatedEventFilter =
+  TypedEventFilter<ReimburseTxMaxFeeUpdatedEvent>;
 
 export type ReimbursementAuthorizationUpdatedEvent = TypedEvent<
   [string, boolean],
@@ -457,6 +485,8 @@ export interface L1BitcoinDepositor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber] & { cost: BigNumber }>;
 
+    reimburseTxMaxFee(overrides?: CallOverrides): Promise<[boolean]>;
+
     reimbursementAuthorizations(
       arg0: string,
       overrides?: CallOverrides
@@ -465,6 +495,11 @@ export interface L1BitcoinDepositor extends BaseContract {
     reimbursementPool(overrides?: CallOverrides): Promise<[string]>;
 
     renounceOwnership(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    setReimburseTxMaxFee(
+      _reimburseTxMaxFee: boolean,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
@@ -561,6 +596,8 @@ export interface L1BitcoinDepositor extends BaseContract {
 
   quoteFinalizeDeposit(overrides?: CallOverrides): Promise<BigNumber>;
 
+  reimburseTxMaxFee(overrides?: CallOverrides): Promise<boolean>;
+
   reimbursementAuthorizations(
     arg0: string,
     overrides?: CallOverrides
@@ -569,6 +606,11 @@ export interface L1BitcoinDepositor extends BaseContract {
   reimbursementPool(overrides?: CallOverrides): Promise<string>;
 
   renounceOwnership(
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  setReimburseTxMaxFee(
+    _reimburseTxMaxFee: boolean,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
@@ -665,6 +707,8 @@ export interface L1BitcoinDepositor extends BaseContract {
 
     quoteFinalizeDeposit(overrides?: CallOverrides): Promise<BigNumber>;
 
+    reimburseTxMaxFee(overrides?: CallOverrides): Promise<boolean>;
+
     reimbursementAuthorizations(
       arg0: string,
       overrides?: CallOverrides
@@ -673,6 +717,11 @@ export interface L1BitcoinDepositor extends BaseContract {
     reimbursementPool(overrides?: CallOverrides): Promise<string>;
 
     renounceOwnership(overrides?: CallOverrides): Promise<void>;
+
+    setReimburseTxMaxFee(
+      _reimburseTxMaxFee: boolean,
+      overrides?: CallOverrides
+    ): Promise<void>;
 
     tbtcToken(overrides?: CallOverrides): Promise<string>;
 
@@ -767,6 +816,13 @@ export interface L1BitcoinDepositor extends BaseContract {
       newOwner?: string | null
     ): OwnershipTransferredEventFilter;
 
+    "ReimburseTxMaxFeeUpdated(bool)"(
+      reimburseTxMaxFee?: null
+    ): ReimburseTxMaxFeeUpdatedEventFilter;
+    ReimburseTxMaxFeeUpdated(
+      reimburseTxMaxFee?: null
+    ): ReimburseTxMaxFeeUpdatedEventFilter;
+
     "ReimbursementAuthorizationUpdated(address,bool)"(
       _address?: string | null,
       authorization?: null
@@ -840,6 +896,8 @@ export interface L1BitcoinDepositor extends BaseContract {
 
     quoteFinalizeDeposit(overrides?: CallOverrides): Promise<BigNumber>;
 
+    reimburseTxMaxFee(overrides?: CallOverrides): Promise<BigNumber>;
+
     reimbursementAuthorizations(
       arg0: string,
       overrides?: CallOverrides
@@ -848,6 +906,11 @@ export interface L1BitcoinDepositor extends BaseContract {
     reimbursementPool(overrides?: CallOverrides): Promise<BigNumber>;
 
     renounceOwnership(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    setReimburseTxMaxFee(
+      _reimburseTxMaxFee: boolean,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
@@ -960,6 +1023,8 @@ export interface L1BitcoinDepositor extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
+    reimburseTxMaxFee(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
     reimbursementAuthorizations(
       arg0: string,
       overrides?: CallOverrides
@@ -968,6 +1033,11 @@ export interface L1BitcoinDepositor extends BaseContract {
     reimbursementPool(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     renounceOwnership(
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    setReimburseTxMaxFee(
+      _reimburseTxMaxFee: boolean,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 

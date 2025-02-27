@@ -104,6 +104,50 @@ declare module "hardhat/types/runtime" {
       name: "IWormholeTokenBridge",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IWormholeTokenBridge__factory>;
+    getContractFactory(
+      name: "IL2WormholeGateway",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IL2WormholeGateway__factory>;
+    getContractFactory(
+      name: "L2BitcoinDepositor",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.L2BitcoinDepositor__factory>;
+    getContractFactory(
+      name: "IWormhole",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IWormhole__factory>;
+    getContractFactory(
+      name: "IWormholeReceiver",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IWormholeReceiver__factory>;
+    getContractFactory(
+      name: "IWormholeRelayer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IWormholeRelayer__factory>;
+    getContractFactory(
+      name: "IWormholeTokenBridge",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IWormholeTokenBridge__factory>;
+    getContractFactory(
+      name: "L1BitcoinDepositor",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.L1BitcoinDepositor__factory>;
+    getContractFactory(
+      name: "IWormhole",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IWormhole__factory>;
+    getContractFactory(
+      name: "IWormholeReceiver",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IWormholeReceiver__factory>;
+    getContractFactory(
+      name: "IWormholeRelayer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IWormholeRelayer__factory>;
+    getContractFactory(
+      name: "IWormholeTokenBridge",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IWormholeTokenBridge__factory>;
 
     getContractAt(
       name: "BTCUtils",
@@ -195,6 +239,61 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.ITBTCVault>;
+    getContractAt(
+      name: "L1BitcoinDepositor",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.L1BitcoinDepositor>;
+    getContractAt(
+      name: "IWormhole",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IWormhole>;
+    getContractAt(
+      name: "IWormholeReceiver",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IWormholeReceiver>;
+    getContractAt(
+      name: "IWormholeRelayer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IWormholeRelayer>;
+    getContractAt(
+      name: "IWormholeTokenBridge",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IWormholeTokenBridge>;
+    getContractAt(
+      name: "IL2WormholeGateway",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IL2WormholeGateway>;
+    getContractAt(
+      name: "L2BitcoinDepositor",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.L2BitcoinDepositor>;
+    getContractAt(
+      name: "IWormhole",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IWormhole>;
+    getContractAt(
+      name: "IWormholeReceiver",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IWormholeReceiver>;
+    getContractAt(
+      name: "IWormholeRelayer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IWormholeRelayer>;
+    getContractAt(
+      name: "IWormholeTokenBridge",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IWormholeTokenBridge>;
     getContractAt(
       name: "L1BitcoinDepositor",
       address: string,
