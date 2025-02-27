@@ -59,8 +59,8 @@ const config: HardhatUserConfig = {
 
   namedAccounts: {
     deployer: {
-      mainnet: "0x949f0ADFDA95351829E49aEec0f99371A227572d",
-      base: "0xBC9C7345d240764BAF2D2016a86165BDf06131c2",
+      mainnet: "0x353C5c3DE81EDb53FFB398f6416f962b90ae8611",
+      base: "0xAAe2a793666c0A0C7BbBbAa18170298aB9146d0e",
     },
   },
 };
