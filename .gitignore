@@ -131,10 +131,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-typechain-types/
-cache/
-.openzeppelin/
-/typechain-types
-/cache
-/artifacts
-.DS_Store
+
