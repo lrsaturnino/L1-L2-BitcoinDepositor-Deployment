@@ -27,31 +27,31 @@ const config: HardhatUserConfig = {
     ],
   },
   networks: {
-    sepolia: {
-      url: process.env.ETHEREUM_SEPOLIA_RPC_URL || "",
-      chainId: 11155111,
+    mainnet: {
+      url: process.env.ETHEREUM_MAINNET_RPC_URL || "",
+      chainId: 1,
       accounts: process.env.PRIVATE_KEY_L1Deployer !== undefined ? [process.env.PRIVATE_KEY_L1Deployer] : [],
       tags: ["etherscan"],
     },
-    baseSepolia: {
-      url: process.env.L2_TESTNET_RPC_URL || "",
-      chainId: 84532,
+    base: {
+      url: process.env.L2_MAINNET_RPC_URL || "",
+      chainId: 8453,
       accounts: process.env.PRIVATE_KEY_L2Deployer !== undefined ? [process.env.PRIVATE_KEY_L2Deployer] : [],
       tags: ["etherscan"],
     },
   },
   etherscan: {
     apiKey: {
-      sepolia: process.env.ETHEREUM_SEPOLIA_EXPLORER_API_KEY || "",
-      "baseSepolia": process.env.L2_TESTNET_EXPLORER_API_KEY || "",
+      mainnet: process.env.ETHEREUM_MAINNET_EXPLORER_API_KEY || "",
+      "base": process.env.L2_MAINNET_EXPLORER_API_KEY || "",
     },
     customChains: [
       {
-        network: "baseSepolia",
-        chainId: 84532,
+        network: "base",
+        chainId: 8453,
         urls: {
-          apiURL: "https://api-sepolia.basescan.org",
-          browserURL: "https://sepolia.basescan.org",
+          apiURL: "https://api.basescan.org",
+          browserURL: "https://basescan.org",
         },
       },
     ],    
@@ -60,7 +60,7 @@ const config: HardhatUserConfig = {
   namedAccounts: {
     deployer: {
       mainnet: "0x949f0ADFDA95351829E49aEec0f99371A227572d",
-      arbitrumOne: "0xBC9C7345d240764BAF2D2016a86165BDf06131c2",
+      base: "0xBC9C7345d240764BAF2D2016a86165BDf06131c2",
     },
   },
 };
